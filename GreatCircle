@@ -1,0 +1,30 @@
+/* *****************************************************************************
+ *  Name:              Jyothsna Reddy V
+ *  Last modified:     June 11, 2023
+ **************************************************************************** */
+
+public class GreatCircle {
+    public static void main(String[] args) {
+        double a = Double.parseDouble(args[0]);
+        a = Math.toRadians(a);
+
+        double b = Double.parseDouble(args[1]);
+        b = Math.toRadians(b);
+
+        double c = Double.parseDouble(args[2]);
+        c = Math.toRadians(c);
+
+        double d = Double.parseDouble(args[3]);
+        d = Math.toRadians(d);
+
+        double temp1 = (c - a) / 2;
+        double temp2 = (d - b) / 2;
+
+        double temp3 = Math.sin(temp1) * Math.sin(temp1) + Math.cos(a) * Math.cos(c) * Math.sin(
+                temp2) * Math.sin(temp2);
+        double radius = 6371.0;
+        double temp4 = Math.sqrt(temp3);
+        double temp5 = 2 * radius * Math.asin(temp4);
+        System.out.println(+temp5 + " kilometers");
+    }
+}
